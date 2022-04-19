@@ -1,0 +1,28 @@
+ALGORITHM read_sentence_and_determine_the_length_number_of_words_and_voyels
+VAR
+    C_L,C_W,C_V : INTEGER :=0; // C_L, C_W et C_V sont des compteurs qui stockent respectivement la longueur du texte, le nombre de mots et le nombre de voyelle
+    phrase : STRING ; // variable qui va stocker le texte que va rentrer l'utilisateur
+    voyel : STRING :=["a","i","o";"e","u","y"]; // stocke les voyelles disponibles 
+    i,n : INTEGER := 0; // deux variables utilisés pour parcourir les boucles
+BEGIN
+    Write ("Merci de donner une phrase") // demande à l'utisateur de donner une phrase
+    Read (phrase) // permet de lire la phrase donnée par l'utlisateur
+    WHILE (phrase[i]<>".") DO // début de la boucle while afin de parcourir chaque caractère de la phrase et verifie si la condition est vraie faire
+        C_L := C_L + 1; // on ajoute + 1 au compteur 
+    END_WHILE // fin de la boucle while
+    Read (C_L) // affiche le compteur C_L
+    WHILE (phrase[i]<>".") DO // début de la boucle while afin de parcourir chaque caractère de la phrase et verifie si la condition est vraie faire
+        IF (phrase[i]=" ") THEN // debut de la condition if qui verifie si le caractère est egal au espace
+            C_W = C_W + 1 // on ajoute + 1 au compteur 
+        END_IF // fin de la boucle if 
+        i ++;
+    END_WHILE // fin de la boucle while
+    FOR i FROM 0 TO C_L STEP step  DO // debut de la boucle for qui initiale n de 0 à 5 pas par pas
+        FOR n FROM 0 TO 5 STEP step  DO
+            IF (phrase[i]=voyel[n]) THEN // debut de la condition if afin de voir si 
+                C_V = C_V + 1 // on ajoute + 1 au compteur 
+            END_IF // fin de la condition If
+        END_FOR // début de la boucle while afin de parcourir chaque caractère de la phrase et verifie si la condition est vraie  
+    END_FOR // fin de la boucle for
+    Read(C_V) // affiche le compteur des  voyelles
+END
